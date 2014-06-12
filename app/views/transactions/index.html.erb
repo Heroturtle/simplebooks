@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> These are your <%= %></h1>
+
+<% @transactions.each do |transaction| %>
+
+<div>
+<h3><%= transaction.reference %></h3>
+<p> You spent  <%= transaction.amount%></p>
+<p> It's an  <%= transaction.transaction_type%></p>
+<p> Comment <%= transaction.comment%></p>
+<% end %>
+
+</body>
+</html> 
