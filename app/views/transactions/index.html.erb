@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title> SimpleBooks | <%= @transaction_type %> </title>
 <body>
 
-<h1> These are your <%= %></h1>
+<h1><%= @transaction_type %></h1>
 
-<% @transactions.each do |transaction| %>
+	<table class="table table-hover">
+		<tr>
+			<th>Contact</th>
+			<th>Date</th>
+			<th>Category</th>
+			<th>Amount</th>
+		</tr> 
 
-<div>
-<h3><%= transaction.reference %></h3>
-<p> You spent  <%= transaction.amount%></p>
-<p> It's an  <%= transaction.transaction_type%></p>
-<p> Comment <%= transaction.comment%></p>
-<% end %>
-
+		<% @transactions.each do |transaction| %>
+		<tr>
+			<td><%= transaction.contact_id %>
+			<td><%= transaction.transaction_date %>
+			<td><%= transaction.category_id %>
+			<td><%= transaction.amount %>
+		<% end %>
+	</table>
 </body>
 </html> 
